@@ -2,7 +2,7 @@
 
 End-to-end deep learning project that classifies oral images into six categories: **Calculus, Caries, Gingivitis, Hypodontia, Mouth Ulcer, Tooth Discoloration**. It includes a custom CNN, three pretrained models, hyperparameter tuning, a comparative analysis, and a Gradio app that serves the best model selected on validation data.
 
-![Gradio demo](docs/gradio_demo.png)
+
 
 ## Highlights
 
@@ -65,26 +65,3 @@ Three configurations were compared on validation data. The best one used the hig
 - The pretrained models are close to each other. EfficientNet-B0 was selected because it had the best validation accuracy and log-loss, and it is also the smallest and fastest model (checkpoint about 15.6 MB), which suits deployment.
 - Classes with more training images (Hypodontia, Gingivitis) are recognized best. Tooth Discoloration has the lowest recall (0.70) and is most often predicted as Caries.
 
-## Run it
-
-1. Open the notebook on Kaggle, attach the dataset, and enable a GPU and Internet (needed to download ImageNet weights).
-2. Run all cells. Full run: about 23 minutes on a Tesla T4.
-3. The last cell launches the Gradio app. It runs locally and can also create a temporary public link.
-
-Install locally:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Repository structure
-
-```
-Oral_Diseases_Image_Classification.ipynb   # full pipeline: data, training, evaluation, Gradio app
-requirements.txt
-docs/gradio_demo.png                        # screenshot of the app
-```
-
-## Disclaimer
-
-Educational image-classification prototype. It is not a medical device and must not be used for diagnosis.
